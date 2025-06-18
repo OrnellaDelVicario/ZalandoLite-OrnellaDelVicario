@@ -20,15 +20,15 @@ import java.util.List;
 
 public class ZalandoLiteApp {
     public static void main(String[] args) {
-        // Crear productos
+        // Create products
         Product shoes = new Product(101, "Running Shoes", "Shoes", 100.0, 5, Arrays.asList("42", "43"));
         Product shirt = new Product(102, "Casual Shirt", "Clothing", 50.0, 10, Arrays.asList("M", "L"));
 
-        // Crear clientes (VIP y normal)
+        // Create customers (VIP and No VIP)
         Customer vipCustomer = new Customer(1, "Lucas", "lucas@mail.com", Arrays.asList("Shoes", "Clothing"), true);
-        Customer normalCustomer = new Customer(2, "Ana", "ana@mail.com", Arrays.asList("Clothing"), false);
+        Customer noVipCustomer = new Customer(2, "Ana", "ana@mail.com", Arrays.asList("Clothing"), false);
 
-        // Crear ítems para la orden
+        // Create items for the order
         OrderItem item1 = new OrderItem(shoes, 1); // 1 par zapatos
         OrderItem item2 = new OrderItem(shirt, 2); // 2 camisas
 
@@ -36,13 +36,13 @@ public class ZalandoLiteApp {
         items.add(item1);
         items.add(item2);
 
-        // Crear orden para VIP customer
+        // Create order for VIP customer
         Order vipOrder = new Order(201, vipCustomer.getId(), items);
 
-        // Instanciar DiscountManager
+        // Instantiate DiscountManager
         DiscountManager discountManager = new DiscountManager();
 
-        // Calcular total original y total con descuento para VIP
+        // Calculate original total and total with discount for VIP customers
         double originalTotal = 0;
         double discountedTotal = 0;
         for (OrderItem item : vipOrder.getItems()) {
@@ -61,23 +61,23 @@ public class ZalandoLiteApp {
         System.out.printf("Original total: $%.2f\n", originalTotal);
         System.out.printf("Discounted total (VIP): $%.2f\n\n", discountedTotal);
 
-        // Crear DeliveryService sin couriers inicialmente
+        // Create DeliveryService without couriers initially
         DeliveryService deliveryService = new DeliveryService();
 
-        // Agregar couriers con addCourier()
+        // Add couriers with addCourier()
         Courier courier1 = new Courier(1, "Maria", "Bike");
         Courier courier2 = new Courier(2, "Jose", "Van");
         deliveryService.addCourier(courier1);
         deliveryService.addCourier(courier2);
 
-        // Asignar courier al pedido
+        // Assign courier to the order
         Delivery delivery = deliveryService.assignCourierToOrder(vipOrder);
         System.out.println("Assigned delivery: " + delivery);
 
-        // Actualizar estado de la entrega
+        // Update delivery status
         deliveryService.updateDeliveryStatus(delivery, "Delivered");
 
-        // Revisar disponibilidad del courier tras entrega
+        // Check courier availability after delivery
         System.out.println("Courier availability after delivery:");
         System.out.println(courier1);
         System.out.println(courier2);
@@ -85,7 +85,7 @@ public class ZalandoLiteApp {
         // Reviews
         ReviewManager reviewManager = new ReviewManager();
         Review r1 = new Review(shoes.getId(), vipCustomer.getId(), 5, "Great quality!");
-        Review r2 = new Review(shoes.getId(), normalCustomer.getId(), 4, "Comfortable shoes.");
+        Review r2 = new Review(shoes.getId(), noVipCustomer.getId(), 4, "Comfortable shoes.");
         Review r3 = new Review(shirt.getId(), vipCustomer.getId(), 3, "Nice shirt but colors fade.");
 
         reviewManager.addReview(r1);
