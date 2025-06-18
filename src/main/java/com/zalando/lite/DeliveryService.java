@@ -3,6 +3,21 @@ package com.zalando.lite;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Manages couriers and deliveries.
+ *
+ * Responsibilities:
+ *  - Assign an available courier to an order
+ *  - Track and update delivery status
+ *
+ * Methods:
+ *  - addCourier(Courier)
+ *  - assignCourierToOrder(Order)
+ *  - updateDeliveryStatus(Delivery, String)
+ *  - getAllDeliveries()
+ */
+
+
 public class DeliveryService {
     private List<Courier> couriers;
     private List<Delivery> deliveries;

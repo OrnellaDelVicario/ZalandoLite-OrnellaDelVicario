@@ -2,6 +2,25 @@ package com.zalando.lite;
 
 import java.util.List;
 
+/**
+ * Represents a product in the ZalandoLite store.
+ *
+ * Fields:
+ *  - int id
+ *  - String name
+ *  - String category
+ *  - double price
+ *  - int stock
+ *  - List<String> availableSizes
+ *
+ * Used in:
+ *  - InventoryManager (stock control)
+ *  - OrderItem (order composition)
+ *  - DiscountManager (discount application)
+ *  - Review (customer reviews)
+ */
+
+
 public class Product {
     private int id;
     private String name;

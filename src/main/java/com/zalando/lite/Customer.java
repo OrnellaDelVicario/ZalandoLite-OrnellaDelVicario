@@ -2,6 +2,24 @@ package com.zalando.lite;
 
 import java.util.List;
 
+/**
+ * Represents a customer of the ZalandoLite platform.
+ *
+ * Fields:
+ *  - int customerId
+ *  - String name
+ *  - String email
+ *  - List<String> favoriteCategories
+ *  - boolean isVip (used for discounts via reflection)
+ *
+ * Used in:
+ *  - CustomerManager
+ *  - DiscountManager
+ *  - Order
+ *  - Review
+ */
+
+
 public class Customer {
     private int customerId;
     private String name;

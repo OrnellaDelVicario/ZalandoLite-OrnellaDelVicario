@@ -3,6 +3,22 @@ package com.zalando.lite;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * Represents a purchase order made by a customer.
+ *
+ * Fields:
+ *  - int id
+ *  - int customerId
+ *  - List<OrderItem> items
+ *  - LocalDateTime timestamp
+ *
+ * Used in:
+ *  - OrderManager
+ *  - DeliveryService
+ *  - DiscountManager (for total cost calculation)
+ */
+
+
 public class Order {
     private int id;
     private int customerId;

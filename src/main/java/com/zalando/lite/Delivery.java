@@ -2,6 +2,20 @@ package com.zalando.lite;
 
 import java.time.LocalDateTime;
 
+/**
+ * Represents a delivery assigned to an order.
+ *
+ * Fields:
+ *  - int deliveryId
+ *  - Order order
+ *  - Courier courier
+ *  - String status
+ *
+ * Used in:
+ *  - DeliveryService
+ */
+
+
 public class Delivery {
     private int deliveryId;
     private Order order;

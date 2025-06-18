@@ -1,5 +1,19 @@
 package com.zalando.lite;
 
+/**
+ * Represents a delivery courier.
+ *
+ * Fields:
+ *  - int id
+ *  - String name
+ *  - String vehicleType
+ *  - boolean isAvailable
+ *
+ * Used in:
+ *  - Delivery
+ *  - DeliveryService
+ */
+
 public class Courier {
     private int id;
     private String name;

@@ -1,5 +1,17 @@
 package com.zalando.lite;
 
+/**
+ * Represents an item inside an order.
+ *
+ * Fields:
+ *  - Product product
+ *  - int quantity
+ *
+ * Used by:
+ *  - Order
+ */
+
+
 public class OrderItem {
     private Product product;
     private int quantity;
